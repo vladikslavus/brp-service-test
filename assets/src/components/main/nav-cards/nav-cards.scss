@@ -1,90 +1,90 @@
 .page__nav-cards {
-    margin-top: 55px;
-    margin-bottom: 55px;
+  margin-top: 30px;
+  margin-bottom: 55px;
+  background: #f5f5f5;
+  padding: 25px 0;
 }
 
 .nav-cards {
-    position: static;
-    height: 215px;
+  position: static;
+  // height: 215px;
 
-    &__heading {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 24px;
-  
-      span {
-        color: $color_main_brand;
-        font-size: 38px;
-      }
+  &__heading {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+
+    span {
+      color: $color_main_brand;
+      font-size: 38px;
     }
+  }
 
-    &__wrp {
-        display: flex;
-        justify-content: space-between;
-        height: inherit;
+  &__wrp {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 
-        // &.container {
-        //     padding: 0 0 0 15px;
-        // }
-    }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    // height: inherit;
+    min-height: 150px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #fff;
+  }
 
-    .swiper {
-        width: 100%;
-        height: inherit;
-    }
+  &__img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
 
-    .swiper-wrapper {
-        height: inherit;
-    }
-
-    &__card {
-        position: relative;
-        overflow: hidden;
-        height: inherit;
-        border-radius: 30px;
-    }
-
-    &__img {
-        width: 100%;
-        height: auto;
-        min-height: 225px;
-    }
-
-    &__text {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 20px;
-        color: #fff;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        margin-inline: auto;
-        text-shadow: rgb(0, 0, 0) 0px 0px 10px;
-    }
+  &__text {
+    display: block;
+    padding: 15px;
+    font-family: 'Avenir Next Cyr Bold';
+    font-size: 16px;
+    color: #000;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    // text-transform: uppercase;
+    margin-inline: auto;
+    // text-shadow: rgb(0, 0, 0) 0px 0px 10px;
+  }
 }
 
 // /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .nav-cards {
-    height: 200px;
-    margin-right: 15px;
+    
+    &__wrp {
+      justify-content: center;
+    }
+    
+    &__card {
+      width: 23%;
+      transition: all .3s ease;
 
-    &__text {
-      transition: all .3s ease-in-out;      
+      &:hover {
+        border: 1px solid transparent;
+        box-shadow: 0 0 20px rgba(0,0,0,.5);
+        transform: translateY(-8px);
+      }
     }
-    &__card:hover &__text {
-      bottom: 40%;
-    }
+
   }
 
-  container {
-    width: 100%;
-  }
+  // container {
+  //   width: 100%;
+  // }
 }
 
 // X-Large devices (large desktops, 1200px and up)
@@ -97,9 +97,8 @@
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) { 
+@media (min-width: 1400px) {
   .nav-cards {
-    height: 225px;
-    margin-right: 15px;
+    
   }
 }

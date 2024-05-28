@@ -10,4 +10,4 @@ import './magicmodals';
 import '../components/main/topbar/topbar';
 import '../components/main/footer/footer';
 import '../components/main/first-screen/order/order';
-import '../components/main/nav-cards/nav-cards';
+// import '../components/main/nav-cards/nav-cards';

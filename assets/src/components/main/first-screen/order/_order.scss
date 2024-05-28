@@ -1,17 +1,15 @@
 // X-Small devices (portrait phones, less than 576px)
 .order {
-  position: absolute;
-  top: 510px;
-  left: 0;
+  // position: absolute;
+  // top: 510px;
+  // left: 0;
+  order: 4;
+  width: 100%;
+  margin: 0;
   padding: 0 15px;
 
-  &__wrp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   &__heading {
+    margin: 0;
     font-size: 28px;
     text-align: center;
 
@@ -32,72 +30,16 @@
   align-items: center;
   width: 100%;
 
-  &__name-wrp {
-    position: relative;
-    width: 100%;
-    height: 70px;
-  }
-
-  &__name {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    padding: 15px 25px 15px 30px;
-    font-size: 22px;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.08);
-    border-radius: 28px;
-    border: 1px solid #333;
-
-    &[placeholder] {
-      padding-left: 35px;
-      color: #666 !important;
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    &:focus {
-      outline: 1px solid #af9a7b;
-    }
-  }
-
-  &__name-placeholder {
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    transform: translateY(-50%);
-    width: 60%;
-    padding: 5px;
-    color: #666;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border: 0;
-    transition: all 200ms;
-  }
-
   %error-style {
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    width: 34px;
+    width: 30px;
     height: auto;
     line-height: normal;
     border: 0;
     transition: all 150ms;
-  }
-
-  &__name-error {
-    @extend %error-style;
-    opacity: 0;
   }
 
   &__phone-error {
@@ -112,20 +54,11 @@
     opacity: 0;
   }
 
-  &__name-placeholder.phMove {
-    top: 0px;
-    width: auto;
-    font-size: 16px;
-    color: #222;
-    // background: linear-gradient(70deg,#1f1e29 10%,#241d28 117%);
-    background: #fff;
-  }
-
   &__phone-wrp {
     position: relative;
     margin-top: 20px;
     width: 100%;
-    height: 70px;
+    height: 58px;
   }
 
   &__phone {
@@ -140,7 +73,7 @@
     height: 100%;
     background: transparent;
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.08);
-    border-radius: 28px;
+    border-radius: 10px;
     border: 1px solid #333;
 
     &[placeholder] {
@@ -164,13 +97,13 @@
     transform: translateY(-50%);
     width: 80%;
     padding: 5px;
-    color: #666;
+    color: #888;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     border: 0;
-    background: #fff;
+    background: #f5f5f5;
     transition: all 200ms;
   }
 
@@ -179,7 +112,7 @@
     width: auto;
     font-size: 16px;
     color: #222;
-    background: #fff;
+    background: #f5f5f5;
   }
 
   &__message-wrp {
@@ -191,6 +124,7 @@
 
   &__button {
     width: 100%;
+    height: 58px;
     margin-top: 20px;
     display: flex;
     padding: 18px 10px;
@@ -198,7 +132,7 @@
     align-items: center;
     gap: 10px;
     border: 0;
-    border-radius: 28px;
+    border-radius: 10px;
     background: $color_main_brand;
     font-size: 22px;
     font-style: normal;
@@ -212,73 +146,31 @@
 // /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .order {
-    &__wrp {
-      width: 60%;
-    }
+    position: absolute;
+    top: 446px;
+    left: 0;
 
     &__heading {
-      text-align: center;
-    }
-  }
+      margin: 0;
+      margin-left: 20px;
+      text-align: left;
+      font-size: 24px;
 
-  .order__form {
-    margin-top: 20px;
+      span {
+        color: #000;
+        font-size: 24px;
+      }
+    }
   }
 
   .order-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     width: 100%;
-
-    &__name-wrp {
-      position: relative;
-      width: 100%;
-      height: 90px;
-    }
-
-    &__name {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      padding: 15px 25px 15px 30px;
-      font-size: 26px;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      border-radius: 28px;
-
-      &[placeholder] {
-        padding-left: 48px;
-        color: #666 !important;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-
-      &:focus {
-        outline: 1px solid #af9a7b;
-      }
-    }
-
-    &__name-placeholder {
-      position: absolute;
-      top: 50%;
-      left: 40px;
-      transform: translateY(-50%);
-      width: 60%;
-      padding: 5px;
-      color: #666;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      border: 0;
-      transition: all 200ms;
-    }
+    margin: 0;
+    margin-left: 20px;
+    margin-top: -10px;
 
     %error-before-style {
       position: absolute;
@@ -304,62 +196,23 @@
         border: none;
       }
     }
-    &__name-error {
-      opacity: 0;
 
-      &::before {
-        content: "Некорректное имя";
-        @extend %error-before-style;
-      }
-
-      &:hover,
-      &::before:hover {
-        opacity: 1;
-      }
-    }
-
-    &__name:hover ~ &__name-error::before,
-    &__name:focus ~ &__name-error::before,
-    &__name-placeholder:hover ~ &__name-error::before,
     &__phone:hover ~ &__phone-error::before,
     &__phone:focus ~ &__phone-error::before,
-    &__phone-placeholder:hover ~ &__phone-error::before,
-    &__message:hover ~ &__message-error::before,
-    &__message:focus ~ &__message-error::before,
-    &__message-placeholder:hover ~ &__message-error::before {
+    &__phone-placeholder:hover ~ &__phone-error::before {
       opacity: 1;
     }
 
     &__phone-error {
       opacity: 0;
-
-      &::before {
-        content: "Некорректный номер";
-        @extend %error-before-style;
-      }
-    }
-
-    &__message-error {
-      top: 20px !important;
-      transform: translateY(0) !important;
-      opacity: 0;
-
-      &::before {
-        content: "Некорректное сообщение";
-        @extend %error-before-style;
-      }
-    }
-
-    &__name-placeholder.phMove {
-      top: 0px;
-      font-size: 16px;
     }
 
     &__phone-wrp {
       position: relative;
       margin-top: 20px;
-      width: 100%;
-      height: 90px;
+      width: 22%;
+      height: 58px;
+      margin-right: 15px;
     }
 
     &__phone {
@@ -373,11 +226,9 @@
       width: 100%;
       height: 100%;
       background: transparent;
-      border-radius: 28px;
 
       &[placeholder] {
-        padding-left: 48px;
-        color: #666 !important;
+        padding-left: 20px;
         font-size: 26px;
         font-style: normal;
         font-weight: 400;
@@ -392,11 +243,10 @@
     &__phone-placeholder {
       position: absolute;
       top: 50%;
-      left: 40px;
+      left: 20px;
       transform: translateY(-50%);
       width: 80%;
       padding: 5px;
-      color: #666;
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
@@ -411,16 +261,15 @@
     }
 
     &__button {
-      width: 100%;
+      width: 14%;
+      height: 58px;
       margin-top: 20px;
       display: flex;
       padding: 20px 10px;
       justify-content: center;
       align-items: center;
       gap: 10px;
-      border-radius: 28px;
-      font-family: "Open Sans";
-      font-size: 32px;
+      font-size: 24px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -431,169 +280,112 @@
 }
 
 // /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .order {
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 86px;
-    // background: linear-gradient(70deg, #171F2C 48.11%, #3C191F 117.98%);
+// @media (min-width: 1200px) {
+//   .order {
+//     width: 100%;
+//     padding-top: 30px;
+//     padding-bottom: 86px;
+//     // background: linear-gradient(70deg, #171F2C 48.11%, #3C191F 117.98%);
 
-    &__wrp {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+//     &__wrp {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//     }
 
-    &__heading {
-      font-size: 38px;
-      text-align: center;
+//     &__heading {
+//       font-size: 38px;
+//       text-align: center;
 
-      span {
-        font-size: 57px;
-      }
-    }
-  }
+//       span {
+//         font-size: 57px;
+//       }
+//     }
+//   }
 
-  .order-form {
-    &__button {
-      margin-top: 46px;
-      padding: 20px 100px;
-      width: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 28px;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      color: #fff;
-      cursor: pointer;
-    }
-  }
-}
+//   .order-form {
+//     &__button {
+//       margin-top: 46px;
+//       padding: 20px 100px;
+//       width: 40%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 10px;
+//       border-radius: 28px;
+//       font-size: 32px;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
+//       color: #fff;
+//       cursor: pointer;
+//     }
+//   }
+// }
 
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
+// /* XX-Large devices (larger desktops, 1400px and up) */
+// @media (min-width: 1400px) {
 
-  .order-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+//   .order-form {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 100%;
 
-    &__name-wrp {
-      position: relative;
-      width: 690px;
-      height: 90px;
-    }
+//     &__phone-wrp {
+//       position: relative;
+//       margin-top: 45px;
+//       width: 690px;
+//       height: 90px;
+//     }
 
-    &__name {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      padding: 15px 25px 15px 30px;
-      font-size: 20px;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      border-radius: 28px;
+//     &__phone {
+//       position: absolute;
+//       top: 0;
+//       left: 50%;
+//       transform: translateX(-50%);
+//       width: 100%;
+//       padding: 15px 25px 15px 30px;
+//       font-size: 20px;
+//       width: 100%;
+//       height: 100%;
+//       background: transparent;
+//       // box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.08);
+//       border-radius: 28px;
 
-      &[placeholder] {
-        padding-left: 48px;
-        color: #666 !important;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
+//       &[placeholder] {
+//         padding-left: 48px;
+//         color: #666 !important;
+//         font-size: 32px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+//       }
 
-      &:focus {
-        outline: 1px solid #af9a7b;
-      }
-    }
+//       &:focus {
+//         outline: 1px solid #af9a7b;
+//       }
+//     }
 
-    &__name-placeholder {
-      position: absolute;
-      top: 50%;
-      left: 28px;
-      transform: translateY(-50%);
-      width: 60%;
-      padding: 5px;
-      color: #666;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      border: 0;
-      background: #fff;
-      transition: all 200ms;
-    }
+//     &__phone-placeholder {
+//       position: absolute;
+//       top: 50%;
+//       left: 28px;
+//       transform: translateY(-50%);
+//       width: 60%;
+//       padding: 5px;
+//       color: #666;
+//       font-size: 32px;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
+//       border: 0;
+//       transition: all 200ms;
+//     }
 
-    &__name-placeholder.phMove {
-      top: 0px;
-      font-size: 16px;
-    }
-
-    &__phone-wrp {
-      position: relative;
-      margin-top: 45px;
-      width: 690px;
-      height: 90px;
-    }
-
-    &__phone {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      padding: 15px 25px 15px 30px;
-      font-size: 20px;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      // box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.08);
-      border-radius: 28px;
-
-      &[placeholder] {
-        padding-left: 48px;
-        color: #666 !important;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-
-      &:focus {
-        outline: 1px solid #af9a7b;
-      }
-    }
-
-    &__phone-placeholder {
-      position: absolute;
-      top: 50%;
-      left: 28px;
-      transform: translateY(-50%);
-      width: 60%;
-      padding: 5px;
-      color: #666;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      border: 0;
-      // border-radius: 50px;
-      background: #fff;
-      transition: all 200ms;
-    }
-
-    &__phone-placeholder.phMove {
-      top: 0px;
-      font-size: 16px;
-    }  
-  }
-}
+//     &__phone-placeholder.phMove {
+//       top: 0px;
+//       font-size: 16px;
+//     }  
+//   }
+// }

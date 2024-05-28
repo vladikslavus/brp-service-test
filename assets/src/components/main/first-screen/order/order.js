@@ -1,16 +1,10 @@
 import IMask from "imask";
 
   const orderForm          = document.querySelector(".order-form");
-  const orderFormName      = document.querySelector(".order-form__name");
   const orderFormPhone     = document.querySelector(".order-form__phone");
-
-  const nameError          = document.querySelector(".order-form__name-error");
-  const nameErrorImg       = document.querySelector(".order-form__name-error-img");
 
   const phoneError         = document.querySelector(".order-form__phone-error");
   const phoneErrorImg      = document.querySelector(".order-form__phone-error-img");
-
-  const namePlaceholder    = document.querySelector(".order-form__name-placeholder");
   const phonePlaceholder   = document.querySelector(".order-form__phone-placeholder");
 
   const submitBtn = document.querySelector(".order-form__button");
@@ -29,17 +23,6 @@ window.onload = function () {
   const mask = IMask(orderFormPhone, maskOptions);
 
   // РАБОТА С ПЛЕЙСХОЛДЕРАМИ, МАСКА ТЕЛЕФОНА
-  orderFormName.addEventListener("focus", (e) => {
-    namePlaceholder.classList.add("phMove");
-  });
-
-  orderFormName.addEventListener("blur", (e) => {
-    if (orderFormName.value.trim() === "") namePlaceholder.classList.remove("phMove");
-  });
-  namePlaceholder.addEventListener("click", (e) => {
-    e.target.classList.add("phMove");
-    orderFormName.focus();
-  });  
 
   orderFormPhone.addEventListener("focus", (e) => {
     phonePlaceholder.classList.add("phMove");
@@ -59,27 +42,11 @@ window.onload = function () {
 
 
   // ОБРАБОТКА ОШИБОК
-  orderFormName.value = "";
   orderFormPhone.value = "";
   orderFormPhone.value = "+7 (___) ___-__-__";
   mask.updateValue();
   orderFormPhone.click();
 
-  function nameCheck() {
-    let orderFormNameValue = orderFormName.value.trim();
-    if (orderFormNameValue.length < 2) {
-      nameError.style.opacity = "1";
-      if (nameError.classList.contains("no-before")) {
-        nameError.classList.remove("no-before");
-        nameErrorImg.setAttribute("src", "/img/order/exclamation.svg");
-      }
-      return false;
-    } else if (orderFormNameValue.length >= 2) {
-      nameErrorImg.setAttribute("src", "/img/order/checked.svg");
-      nameError.classList.add("no-before");
-      return true;
-    }
-  }
   function phoneCheck() {
     let orderFormPhoneValue = orderFormPhone.value.trim();
     if (orderFormPhoneValue.match(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/) == null) {
@@ -96,19 +63,6 @@ window.onload = function () {
     }
   }
 
-  // function validate(input) {
-  //   if ($(input).attr("name") == "name") {}
-  // }
-
-
-
-  orderFormName.addEventListener("keyup", (e) => {
-    nameCheck();
-  });
-  orderFormName.addEventListener("blur", (e) => {
-    nameCheck();
-  });
-
   orderFormPhone.addEventListener("focus", (e) => {
     mask.updateValue();
   });
@@ -122,14 +76,11 @@ window.onload = function () {
   // AJAX
   // функция очистки
   function cleanForm() {
-    orderFormName.value = "";
     orderFormPhone.value = "+7 (___) ___-__-__";
     mask.updateValue();
 
-    namePlaceholder.classList.remove("phMove");
     phonePlaceholder.classList.remove("phMove");
 
-    nameError.style.opacity = "0";
     phoneError.style.opacity = "0";
   }
 
@@ -153,7 +104,6 @@ window.onload = function () {
     // передаем в фукцию fetch данные и получаем результат
     postData("/php/send-order-form.php", data).then((data) => {
       // обработка ответа от сервера
-      if (nameCheck() === false) return false;
       if (phoneCheck() === false) return false;
       
       if (data.error == "") {
