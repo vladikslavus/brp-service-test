@@ -1,0 +1,62 @@
+@import 'order/order';
+
+// X-Small devices (portrait phones, less than 576px)
+.first-screen {
+  height: 870px;
+  background: #fff;  
+
+  &__inner {
+    position: relative;
+    overflow-x: hidden;
+    height: inherit;
+  }
+
+  h1 {
+    position: absolute;
+    top: 24px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Avenir Next Cyr';
+    font-size: 30px;
+    color: #000;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 500px #000;
+  }
+  &__bg {
+    position: absolute;
+    top: 190px;
+    right: -114px;
+    width: 760px;
+    height: auto;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .first-screen {
+    height: 1045px;
+
+    &__inner {
+      position: relative;
+      overflow-x: visible;
+      height: inherit;
+    }
+  
+    h1 {
+      top: 20px;
+      max-width: 500px;
+      font-family: 'Avenir Next Cyr Bold';
+      font-size: 52px;
+      text-align: left;
+      text-transform: unset;
+      font-style: italic;
+      text-shadow: 1px 1px 10px rgba(255,255,255,1);
+    }
+
+    &__bg {
+      top: 0;
+      right: -100px;
+      width: 100%;
+    }
+  }
+}

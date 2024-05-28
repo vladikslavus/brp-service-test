@@ -1,0 +1,154 @@
+$text_color: #202020;
+$color_main_brand: #e58e26;
+
+@font-face {
+  font-family: 'Avenir Next Cyr';
+  src: url('/fonts/AvenirNextCyr/AvenirNextCyr-Medium.eot');
+  /* IE 9 Compatibility Mode */
+  src: url('/fonts/AvenirNextCyr/AvenirNextCyr-Medium.eot?#iefix') format('embedded-opentype'),
+    /* IE < 9 */
+    url('/fonts/AvenirNextCyr/AvenirNextCyr-Medium.woff') format('woff'),
+    /* Firefox >= 3.6, any other modern browser */
+    url('/fonts/AvenirNextCyr/AvenirNextCyr-Medium.ttf') format('truetype');
+    /* Safari, Android, iOS */
+    font-weight: 400;
+	  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next Cyr Bold';
+  src: url('/fonts/AvenirNextCyr/AvenirNextCyr-Bold.eot');
+  /* IE 9 Compatibility Mode */
+  src: url('/fonts/AvenirNextCyr/AvenirNextCyr-Bold.eot?#iefix') format('embedded-opentype'),
+    /* IE < 9 */
+    url('/fonts/AvenirNextCyr/AvenirNextCyr-Bold.woff') format('woff'),
+    /* Firefox >= 3.6, any other modern browser */
+    url('/fonts/AvenirNextCyr/AvenirNextCyr-Bold.ttf') format('truetype');
+    /* Safari, Android, iOS */
+    font-weight: 400;
+	  font-style: normal;
+}
+
+html {
+  font-family: 'Avenir Next Cyr', "Calibri", "Arial", sans-serif;
+  font-size: 100%;
+  color: $text_color;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir Next Cyr';
+  font-size: 16px;
+  color: #000;
+  box-sizing: border-box;
+}
+
+*:visited,
+*:focus,
+*:active,
+*:hover {
+  outline: 0 none !important;
+}
+
+.page {
+  position: relative;
+  height: 100%;
+
+  &__overlay {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .4);
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+section {
+  width: 100vw;
+  color: #fff;
+
+  h2 {
+    margin-bottom: 15px;
+    color: #000;
+  }
+
+  p {
+    // text-indent: 20px;
+    text-align: left;
+    line-height: 1.6;
+    hyphens: auto;
+    margin-bottom: 15px;
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+.container {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.content {
+  position: static;
+}
+.content-active {
+  transform: translateX(0%);
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+// /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+      width: 960px;
+    }
+}
+
+// /* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px; // 1440px
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .content {
+    position: static;
+  }
+
+  .content-active {
+    transform: translateX(0%);
+  }
+}

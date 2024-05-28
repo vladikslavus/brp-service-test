@@ -1,0 +1,44 @@
+.benefits {
+  margin-top: 150px;
+  background-color: #f5f9fb;
+  padding: 25px 0;
+  
+  &__wrp {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__benefit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    width: 70px;
+    height: auto;
+  }
+  &__name {
+    font-family: 'Avenir Next Cyr Bold';
+    font-size: 22px;
+    margin: 14px 0;
+  }
+  &__text {
+    text-align: center;
+  }
+}
+
+// /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .benefits {
+    
+    &__wrp {
+      display: flex;
+      flex-direction: row;
+    }
+    &__benefit {
+      padding: 0 50px;
+    }
+  }
+}

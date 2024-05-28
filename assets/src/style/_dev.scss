@@ -1,0 +1,37 @@
+/* 3 класса для разработки, по умолчанию красный цвет */
+.dev, .dev-r, .dev-red {
+    border: 1px dashed red !important;
+}
+.dev-b, .dev-blue {
+    border: 1px dashed blue !important;
+}
+.dev-g, .dev-green {
+    border: 1px dashed green !important;
+}
+
+.some-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  p {
+    font-size: 22px;
+  }
+}
+// .some-section:nth-child(1) {
+//   background: #f7d794;
+// }
+// .some-section:nth-child(2) {
+//   background: #f3a683;
+// }
+// .some-section:nth-child(3) {
+//   background: #7ed6df;
+// }
+// .some-section:nth-child(4) {
+//   background: #778beb;
+// }
+// .some-section:nth-child(5) {
+//   background: #f7d794;
+// }

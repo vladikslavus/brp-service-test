@@ -1,0 +1,48 @@
+{
+  "name": "brp-service-test.vextor.ru",
+  "version": "1.0.0",
+  "description": "Пет-проект Сервисный центр по ремонту техники BRP для ООО ПЕРСПЕКТИВА",
+  "author": "Vladislav Beletsky",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladikslavus/vbstarterkit.git"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.8.3",
+    "animate.css": "^3.7.0",
+    "fslightbox": "^3.2.2",
+    "gsap": "^3.6.1",
+    "imask": "^6.4.3",
+    "normalize.css": "^8.0.1",
+    "simplebar": "^5.3.0",
+    "swiper": "^11.0.5",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "browserslist": "^4.16.3",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "imagemin-jpeg-recompress": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "webpack": "^4.46.0",
+    "webpack-stream": "^6.1.1"
+  }
+}
